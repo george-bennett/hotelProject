@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>Hotel Bishee Barnabee</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/functions.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/range.js"></script>
+        <script src="js/localstorage.js"></script>
+        <script src="js/payment-validator.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/datepicker.css">
+        <link rel="stylesheet" href="css/homepage2.css">
+        <link rel="shortcut icon" type="image/jpg" href="images/hotellogo.jpg"/>
+
+    </head>
+
+    <body>
+        <div class="container mainRow">
+
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                            <span class="glyphicon glyphicon-menu-hamburger"></span>
+                        </button>
+                        <a class="navbar-brand nav-link navHomeLink" id="homeButton" href="#aboutUsSectionBM"><img src="images/hotellogo.jpg" alt="Hotel Bishee Barnabee" id="navLogo"></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        <ul class="nav navbar-nav">
+                            <li><a class="nav-link navLink" onclick="navBarClicked(navbar)" href="#roomSectionBM">Rooms</a></li>
+                            <li><a class="nav-link navLink" onclick="navBarClicked(navbar)" href="">My Bookings</a></li>
+                            <li><a class="nav-link navLink" onclick="navBarClicked(navbar)" href="#facilitySectionBM">Facilities</a></li>
+                            <li><a class="nav-link navLink" onclick="navBarClicked(navbar)" href="">Local Attractions</a></li>
+                            <li><a class="nav-link navLink" onclick="navBarClicked(navbar)" href="">Contact Us</a></li>
+                        </ul>
+                    </div> 
+                </div>
+            </nav>
+
+            <!-- title -->
+            <div class="container">
+                <h1 class="homePageHeader">
+                    Welcome to Hotel Bishee Barnabee         
+                </h1>
+            </div>
+
+            <!-- carousel -->
+            <div class="container">
+                <div id="myCarousel" class="carousel" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="images/norwich_countryside.jpg" alt="Image">                       
+                        </div>
+                        <div class="item">
+                            <img src="images/norwich_market.jpg" alt="Image">
+                        </div>
+                        <div class="item">
+                            <img src="images/norwich_forum.jpg" alt="Image">
+                        </div>
+                    </div>
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- availability form -->
+            <div class="container" id="aboutUsSectionBM">
+                <div class="container availabilityContainer col-xs-12 col-md-8 col-md-offset-2" id="availabilityForm">
+                    <div class="row availabilityRow">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4">
+                                <p class="availabilityCaptions">Check-in</p>
+                                <input class="datepicker availabilityButton" id="startingDate"  type="text" name="check-in" data-date-format="yyyy-mm-dd" placeholder="2020-11-01">
+                            </div>
+                            <div class="col-xs-6 col-sm-4">
+                                <p class="availabilityCaptions">Check-out</p>
+                                <input class="datepicker availabilityButton" id="endingDate"  type="text" name="check-out" data-date-format="yyyy-mm-dd" placeholder="2020-11-03">
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <p class="submitCaption">-</p>
+                                <button class="btn-success availabilityButton submitButton" onclick="checkAvailability()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- home (contains: rooms) -->
+
+            <div class="collapse in">
+            <div class="container-fluid">
+                <h1 class="aboutUsHeader">
+                    About Us         
+                </h1>
+                <p class="aboutUs" id="roomSectionBM">
+                    Located just west of the historic city of Norwich, Bishee Barnabee Hotel offers a total of 32 lavish rooms, with a choice between double and twin bed standard rooms.
+                    However if you are looking for more a more lavish experience, our Supreme double and twin doubles should suit those needs! 
+                    Additionally our hotel comes equipped with a state of the art gym, with a full range of apparatus, available to be used by all of our customers. 
+                    We also offer morning breakfast, with a large variety of different cold and cooked foods, to start you day.                                                 
+                </p>                      
+            </div>
+
+            <div class="container-fluid">
+                <h1 class="homePageHeaderRooms">
+                    Rooms       
+                </h1>
+            </div>
+
+            <div class="container-fluid">
+                <div class="container roomContainer col-xs-12 col-sm-12 col-sm-6">
+                    <h2 class="roomTitle">Supreme Double</h2>
+                    <img class="img-rounded" src="images/supreme_double.jpg" alt="supreme double">
+                    <h2 class="roomTitle">£77 per night</h2>                               
+                </div>
+                <div class="container roomContainer col-xs-12 col-sm-12 col-sm-6">
+                    <h2 class="roomTitle">Supreme Twin</h2>
+                    <img class="img-rounded" src="images/supreme_twin.jpg" alt="supreme double">
+                    <h2 class="roomTitle">£75 per night</h2>                                
+                </div>
+                <div class="container roomContainer col-xs-12">
+                    <h3 class="roomTypeTitle">Supreme Rooms</h3>
+                    <h4 class="supremeInfo">Our supreme rooms come fully equipped with all the features of our standard rooms plus much more. Our supreme beds are made of the highest quality materials and have deep memory foam beds, which position around your body, providing you with the highest possible levels of comfort. Other features of these rooms include free access to a fully stocked miniature bar, with no use limits or hidden fees. If alcoholic options are not to your taste, then our food room services may well be what you are looking for. A choice of food options brought straight to your room, and at a discount compared to that of customers booking standard rooms. Supreme rooms come in a choice of double bed and twin doubles.</h4>                               
+                </div>
+                <div class="container roomContainer col-xs-12 col-sm-12 col-sm-6">
+                    <h2 class="roomTitle">Standard Double</h2>
+                    <img class="img-rounded" src="images/standard_double.jpg" alt="supreme double">
+                    <h2 class="roomTitle">£65 per night</h2>
+                </div>
+                <div class="container roomContainer col-xs-12 col-sm-12 col-sm-6">
+                    <h2 class="roomTitle">Standard Twin</h2>
+                    <img class="img-rounded" src="images/standard_twin.jpg" alt="supreme double">
+                    <h2 class="roomTitle">£62 per night</h2>
+                </div>
+                <div class="container roomContainer col-xs-12">
+                    <h3 class="roomTypeTitle">Standard Rooms</h3>
+                    <h4 class="doubleInfo" id="facilitySectionBM">Should you just be looking for the essentials, our standard rooms are more likely what you are looking for. These rooms are furnished with comfortable beds, multiple pillows and a lightweight but warm duvet. We also provide a high definition television with access to multiple channels. Your room will also be supplied with free tea and coffee making facilities. High speed Wi-Fi access is also included in the price of your hotel room. Like our supreme room choices, Standard rooms have a choice between that of a Double Bed room or a Twin Double Bed room.</h4>                               
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <h1 class="homePageHeaderRooms">
+                    Relaxing at Hotel Bishee Barnabee
+                </h1>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <h3 class="doubleInfo facilityText">During your stay with us, you will be able to enjoy a large variety of foods in our very own restaurant.
+                            Our dining experience includes breakfast,lunch and dinnertime options so you will be well catered for.
+                            We offer full-continental breakfast including cereals toast, croissants as well as cooked foods such as a classic full English!      </h3>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <img class="img-rounded facilityImage" src="images/dining_room.jpg" alt="hotel gym">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <h3 class="doubleInfo facilityText">The in-hotel bar is the ideal way to relax after a long day, meet other guests or just enjoy a quiet drink. Our bar contains any beverage of choice!</h3>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <img class="img-rounded facilityImage" src="images/bar.jpg" alt="hotel gym">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+                <h1 class="homePageHeaderRooms">
+                    Other Facilities
+                </h1>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <img class="img-rounded facilityImage" src="images/gym.jpg" alt="hotel gym">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <h3 class="doubleInfo facilityText">Should you wish to, we have a fully equipped gym for your use, including weight training, multiple treadmill and enough open space for your own exercise routines, this is available for use with all of our customers. Customers who book a Supreme room will be able to use the gym for free during your visit.</h3>
+                    </div>               
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <img class="img-rounded facilityImage" src="images/function_room.jpg" alt="hotel gym">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <h3 class="doubleInfo facilityText">If you are looking to host any mid-sized event ranging from a wedding reception to a business meeting, our 3 functions rooms would be perfect for you. They are ideal for anywhere between 20-60 guests and can be arranged as requested. Please contact us on our email address for further enquiries.
+                                            Email: bisheebarnabeehotel@gmail.com</h3>
+                    </div>               
+                </div>
+            </div>
+        </div>
+</div>
+
+
+<!--available rooms--> 
+                <div class="collapse row" id="availableRooms">
+                    <div class="container">
+                        <div class="row">
+                            <div class = "well">
+                                <div class = "row">
+                                    <div class="col-md-6">
+                                        <div class="well" id="std_t">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <h2>Standard Twin</h2>
+                                                    </div>
+                                                    <div class="row">
+                                                        <img class="img-responsive" src="images/standard_twin.jpg" alt="supreme double">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 text-center">
+                                                    <div class="row price">
+                                                        <h2 id="std_t_price"></h2>
+                                                        <p id="std_t_ppn"></p>
+                                                    </div>
+                                                    <div class="row pay">
+                                                        <button class="btn" onclick="addRoom('std_t')" id="std_t_button">Add To Basket</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="well" id="std_d">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <h2>Standard Double</h2>
+                                                    </div>
+                                                    <div class="row">
+                                                        <img class="img-responsive" src="images/standard_double.jpg" alt="supreme double">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 text-center">
+                                                    <div class="row price">
+                                                        <h2 id="std_d_price"></h2>
+                                                        <p id="std_d_ppn"></p>
+                                                    </div>
+                                                    <div class="row pay">
+                                                        <button class="btn" onclick="addRoom('std_d')" id="std_d_button">Add To Basket</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="well" id="sup_t">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <h2>Supreme Twin</h2>
+                                                    </div>
+                                                    <div class="row">
+                                                        <img class="img-responsive" src="images/supreme_twin.jpg" alt="supreme double">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 text-center">
+                                                    <div class="row price">
+                                                        <h2 id="sup_t_price"></h2>
+                                                        <p id="sup_t_ppn"></p>
+                                                    </div>
+                                                    <div class="row pay">
+                                                        <button class="btn" onclick="addRoom('sup_t')" id="sup_t_button" >Add To Basket</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="well" id="sup_d">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <h2>Supreme Double</h2>
+                                                    </div>
+                                                    <div class="row">
+                                                        <img class="img-responsive" src="images/supreme_double.jpg" alt="supreme double">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 text-center" >
+                                                    <div class="row price">
+                                                        <h2 id="sup_d_price"></h2>
+                                                        <p id="sup_d_ppn"></p>
+                                                    </div>
+                                                    <div class="row pay">
+                                                        <button class="btn" onclick="addRoom('sup_d')" id="sup_d_button">Add To Basket</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+        
+                 <!--Basket--> 
+                <div class="collapse" id="basket">
+                    <div class="container">
+                        <div class = "row">
+                            <div class = "well" id="basket_content">
+                                <div class="row">
+                                    <div class="well">
+                                        <div class="row">
+                                            <div class="col-md-6 text-center">
+                                                <p id="pay_p">some text</p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button id="pay_button" class="btn" onclick="payNow()">Pay Now</button>
+                                            </div>  
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                 <!--pay details--> 
+                <div class="collapse" id="payment">
+                    <div class="container">
+                        <form class="well form-horizontal" id="payment_content" method="post" data-toggle="validator">
+                            <label>Please enter your payment details here:</label> 
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="c_name" class="control-label">Name:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input id="c_name" placeholder="Name" class="form-control"  maxlength="80" type="text" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="c_email">Email:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                        <input id="c_email" placeholder="Email" class="form-control"  type="email" maxlength="60" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="addr_line">Address Line 1:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                        <input id="addr_line" placeholder="House number, Street name etc" class="form-control"  type="text" maxlength="140" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group ">
+                                    <label for="city">City:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                        <input id="city" placeholder="City" class="form-control"  type="text" maxlength="53" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postcode">Postcode:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                        <input id="postcode" placeholder="no spaces" class="form-control"  type="text" maxlength="7" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="c_cardno">Card Number:</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                                        <input id="c_cardno" placeholder="xxxx xxxx xxxx xxxx" class="form-control"  type="text" maxlength="16" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c_cardexp">Expiry Date:</label>
+                                    <input placeholder="xx/xx" type="text" id="c_cardexp" class="form-control" maxlength="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c_cardtype">Card type: </label>
+                                    <select id="c_cardtype" name="cardtype" class="form-control" required>
+                                        <option value="" disabled selected>Choose Card Type</option>
+                                        <option value="V">Visa</option>
+                                        <option value="MC">Master Card</option>
+                                        <option value="A">American Express</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary" onclick="submitPayment()">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        
+                 <!--local--> 
+                <div class="collapse thing_to_collapse " id="local">
+                    <div class="container">
+                        <div class ="row">
+                            <div class="well">
+                                <h2>Local Attractions of Norwich</h2> 
+                                <p>The hotel is in close proximity to the City of Norwich which has a wide array of cultural sights too see, these include the historic sites of Norwich Cathedral and Norwich Castle. 
+                                    For those interested in the arts, the Sainsbury Centre located on the University of East Anglia Campus is open to view a wide array of different arts and crafts,
+                                    including sculptures. Norwich also has a number of open green spaces, including Eaton and Earlham Park.
+                                    Due to the close proximity to the City of Norwich there are many opportunities for you to shop to your heart's content.
+                                    Transport via rail to London is very convenient as well as flights from Norwich airport, should you need to travel often.
+                                    Here are some links to potential areas of interest for you to explore during your stay with us.
+                                </p>
+                                <div class="list-group">  
+                                    <a href='https://www.cathedral.org.uk/' class="list-group-item list-group-item-action" target="_blank">Norwich Cathedral</a>
+                                    <a href='https://www.museums.norfolk.gov.uk/norwich-castle' class="list-group-item list-group-item-action" target="_blank">Norwich Castle</a>
+                                    <a href='https://scva.ac.uk/' class="list-group-item list-group-item-action" target="_blank">Sainsbury Centre For Visual Arts</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </body>
+
+</html>
